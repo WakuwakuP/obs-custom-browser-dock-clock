@@ -22,6 +22,7 @@ function App() {
         body {
           font-family: 'M PLUS 1p', sans-serif;
           color: white;
+          background-color: #3A393A;
         }
         `}
       </style>

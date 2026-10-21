@@ -7,14 +7,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         node-version: ["16.x"]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v7.0.1
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v7.1.0
         with:
           node-version: ${{ matrix.node-version }}
       - name: install and build

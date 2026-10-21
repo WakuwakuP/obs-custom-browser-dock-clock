@@ -14,20 +14,18 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-26.04
-    strategy:
-      matrix:
-        node-version: ["16.x"]
     steps:
       - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js LTS
         uses: actions/setup-node@v7.1.0
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: install and build
+          node-version-file: .nvmrc
+      - name: Install, test, and build
         run: |
-          yarn
+          yarn install --frozen-lockfile
+          yarn test --watchAll=false --runInBand
           yarn build
         env:
           CI: true

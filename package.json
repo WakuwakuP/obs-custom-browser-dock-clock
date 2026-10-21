@@ -2,6 +2,10 @@
   "name": "my-wallpaper",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "yarn@1.22.22",
   "homepage": "http://www.wakuwakup.net/obs-custom-browser-dock-clock",
   "dependencies": {
     "@babel/core": "7.12.3",
@@ -14,7 +18,7 @@
     "@typescript-eslint/parser": "^4.5.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
-    "babel-loader": "8.1.0",
+    "babel-loader": "8.2.5",
     "babel-plugin-named-asset-import": "^0.3.7",
     "babel-preset-react-app": "^10.0.0",
     "bfj": "^7.0.2",
@@ -69,10 +73,13 @@
     "tsparticles": "^1.37.5",
     "url-loader": "4.1.1",
     "web-vitals": "^1.0.1",
-    "webpack": "4.44.2",
+    "webpack": "4.47.0",
     "webpack-dev-server": "3.11.1",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.4"
+  },
+  "resolutions": {
+    "postcss-safe-parser/postcss": "8.5.15"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -116,7 +123,7 @@
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
-    "testRunner": "C:\\Users\\naoki\\ghq\\github.com\\wakuwakup\\my-wallpaper\\node_modules\\jest-circus\\runner.js",
+    "testRunner": "jest-circus/runner",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
